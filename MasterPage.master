@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div style ="background: #999;height:100%;width:auto;min-height: 600px;">
+            <div style ="float: left;height: 100%;width: auto; position:fixed;">
+               <div>
+                    <div>
+                        <h2>News</h2>
+                    </div>
+                   <br />
+                    <div>
+                        <asp:HyperLink ID="HyperLink4" NavigateUrl="~/Index.aspx" runat="server" ForeColor="Black">Home</asp:HyperLink>
+                            <asp:HyperLink ID="AddNews" Visible="false" NavigateUrl="~/AddNews.aspx" runat="server" ForeColor="Black">| Add News</asp:HyperLink>
+                            <asp:HyperLink ID="UpdateUsers" Visible="false" NavigateUrl="~/Admin.aspx" runat="server" ForeColor="Black">| Update Profiles</asp:HyperLink>
+                        <asp:LoginView ID="LoginView3" runat="server">
+                            <AnonymousTemplate>
+
+                            <asp:HyperLink ID="HyperLink3" NavigateUrl="~/UserSignUp.aspx" runat="server" ForeColor="Black">| Sign Up</asp:HyperLink>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                            <asp:HyperLink ID="HyperLink3" NavigateUrl="~/UpdateProfile.aspx" runat="server" ForeColor="Black">| Profile</asp:HyperLink>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
+                    <div>
+                        <div class="input-group">
+                          <span class="input-group-btn">
+                            <asp:Button ID="BSearch" CssClass="btn btn-default" runat="server" Text="Search" OnClick="BSearch_Click" />
+                          </span>
+                          <asp:TextBox CssClass="form-control" ID="TBSearch" runat="server"></asp:TextBox>
+                   </div>
+                        
+                       
+            
+                    </div>
+               
+                </div>
+                <br />
+                <br />
+                <br />
+                <div>
+            
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <asp:Login ID="Login1" runat="server" CreateUserText="Register" CreateUserUrl="~/UserSignUp.aspx" Width="300" BackColor="#756659" Font-Names="Verdana" Font-Size="10pt">
+                            </asp:Login>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Signed in as <asp:LoginName ID="LoginName1" runat="server" />! <br /> 
+                            <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                        </LoggedInTemplate>
+                    </asp:LoginView>    
+                </div>
+                
+            </div>  
+            <div style="margin-left:300px;width:10px">   
+
+            </div>
+
+            
+            <div style="margin-left:320px;background: #666;height: 100%;padding-left:10px;padding-right:10px;min-height: 600px;">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+            <div style=" clear: both;height: 1px;overflow: hidden;font-size: 0pt;margin-top: -1px;">
+
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

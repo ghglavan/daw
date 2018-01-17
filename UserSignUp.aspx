@@ -120,7 +120,7 @@
                     <asp:RadioButtonList ID="RBLUType" runat="server" RepeatDirection="Horizontal">
                         <asp:ListItem Text="Normal User" Value="0"></asp:ListItem>
                         <asp:ListItem Text="Editor" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="Admin" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Admin" Value="2"></asp:ListItem>
                     </asp:RadioButtonList>
                     </div>
                     <div>

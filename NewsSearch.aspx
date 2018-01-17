@@ -17,7 +17,7 @@
                 <h3><%# DataBinder.Eval(Container.DataItem, "Title")%> by <%# DataBinder.Eval(Container.DataItem, "author")%></h3>
             
                 <div>
-                    <asp:LinkButton ID="Cat" runat="server" OnClick="Search_Category"  CommandArgument = '<%#  DataBinder.Eval(Container.DataItem, "category") %>'>
+                    <asp:LinkButton  CssClass="label label-success" ID="Cat" runat="server" OnClick="Search_Category"  CommandArgument = '<%#  DataBinder.Eval(Container.DataItem, "category") %>'>
                          <%# DataBinder.Eval(Container.DataItem, "category")%> 
                     </asp:LinkButton>
                 </div>
